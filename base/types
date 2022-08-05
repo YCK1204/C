@@ -1,0 +1,24 @@
+//정수형                                                                                                     printf 사용시
+short int                   -32,768~32,767                                            2byte                  %d
+unsigned short int           0~65,535                                                 2byte                  %u
+int                         -2,147,483,648 ~ 2,147,483,647                            4byte                  %d
+long int                    -2,147,483,648 ~ 2,147,483,647                            4byte                  %ld
+unsigned int                 0~4,294,967,295                                          4byte                  %u
+unsigned long int            0~4,294,967,295                                          4byte                  %lu
+long long int               -9,223,372,036,854,775,808~9,223,372,036,854,775,807      8byte                  %lld
+unsigned long long int       0~18,446,744,073,709,551,615                             8byte                  %llu
+
+
+//문자
+char                        -128~127                                                  1byte
+unsigned char               0~255                                                     1byte
+
+
+
+//실수형
+float                       ±3.4 * 10^-37 ~ ±3.4 * 10^38                              4byte
+double                      ±1.7 * 10^-307 ~ ±3.4 * 10^308                            8byte
+long bouble                 double 이상                                               8byte이상
+
+
+
