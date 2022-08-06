@@ -1,0 +1,15 @@
+// 절대값 함수에는 abs와 fabs가 있다.
+// abs는 int형을 절대값으로 반환해주는 함수인데 헤더 파일로는 <stdlib.h>가 사용된다.
+// fabs는 double형을 절대값으로 반환해주는 함수인데 헤더 파일로는 <math.h>가 사용된다.
+
+
+#include <stdio.h>
+#include <stdlib.h>      << abs사용을 위한 헤더파일
+#include <math.h>        << fabs사용을 위한 헤더파일
+int main(){
+    int a = -3;
+    double b = -14.56;
+    printf("%d\n", abs(a)%5);        // 3
+    printf("%.0f", fabs(b));         // 15
+    return 0;
+}
