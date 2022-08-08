@@ -1,0 +1,15 @@
+// 랜덤으로 숫자 뽑기
+
+// 헤더파일 #include <stdlib.h>
+// #include <time.h>
+// 랜덤으로 숫자를 뽑을 땐 반드시 srand(time(NULL));을 해줘야함
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+  for(int i = 0; i < 10; i ++){
+    printf("%d", rand() % 3 + 1);   // % 3을 해서 0이상 3 미만의 수를 랜덤으로 뽑고 이후 +1을해서 1이상 3이하의 수를 랜덤으로 뽑는것 처럼 출력
+  }
+}
