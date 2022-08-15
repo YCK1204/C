@@ -1,0 +1,25 @@
+// 삽입 정렬
+
+#include <stdio.h>
+
+#define swap(a, b, temp){temp = a; a = b; b = temp;} // 스왚 함수 구현
+
+int main() {
+	int n = 10, temp;
+	int targets[10] = { 7, 5, 9, 0, 3, 1, 6, 2, 4, 8 };
+
+
+  // 첫 번째 원소는 이미 정렬 된셈 치고 시작
+	for (int i = 1; i < n; i++) {
+		for (int j = i; j > 0; j--) {
+			if (targets[j] < targets[j - 1]) {  // 현재 원소 값이 이전 원소 값보다 작을 경우 (현재 값과 이전 값 스왚)
+				swap(targets[j], targets[j - 1], temp);
+			}
+			else break;    // 현재 원소 값이 이전 원소 값보다 클 경우 정렬 되어 있는 것이니 break해서 두 번째 for문 종료
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		printf("%d ", targets[i]);
+	}
+	return 0;
+}
