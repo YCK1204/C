@@ -1,0 +1,26 @@
+// 백준 11365
+
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char*argv[]){
+    char temp[501] = {0, };
+    while (1)
+    {
+        gets(temp);
+        if (strcmp(temp, "END") == 0)
+            break;
+        for(int x = strlen(temp)-1; x >= 0;x--)
+        {
+            printf("%c", temp[x]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+// 첫번째 매개변수 str1 : 비교할 문자열1, 
+// 두번재 매개변수 str2 : 비교할 문자열2
+// str1 < str2 인 경우에는 음수 반환
+// str1 > str2 인 경우에는 양수 반환
+// str1 == str2 인 경우에는 0을 반환
