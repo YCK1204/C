@@ -1,0 +1,22 @@
+// 에라토스 테네스의 체
+// a와 b의 범위 내에 소수들을 찾는 알고리즘
+
+
+#include <stdio.h>
+#include <math.h>
+
+int a, b;
+int primes[b+1] = {}; // 범위에서 가장 큰 값을 기준으로 배열 생성
+int main(){
+    scanf("%d %d", &a, &b);
+    for(int i = 2; i <= sqrt(m); i++){
+        if (!primes[i]){
+            for(int j = 2; i * j <= m; j++) primes[i * j] = 1;
+        }
+    }
+    
+    
+    for(int i = a; i <= m; i++){
+        if (!primes[i]) printf("%d\n", primes[i]);
+    }
+}
