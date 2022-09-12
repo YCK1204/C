@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <Windows.h>
+#include <conio.h>
+
+// 방향키들 선언
+#define LEFT 75
+#define RIGHT 77
+#define UP 72
+#define DOWN 80
+#define ARROW 224
+
+// 출력 위치 함수
+void GotoXY(int x, int y) {
+	COORD Pos;
+	Pos.X = x;
+	Pos.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+
+// 커서 깜빡임 false(bVisible = 0;) dwSize 커서 사이즈
+void CursorView(char show) {
+	CONSOLE_CURSOR_INFO ConsoleCursor;
+	ConsoleCursor.bVisible = show;
+	ConsoleCursor.dwSize = 1;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &ConsoleCursor);
+}
+
+int x = 30;
+int y = 7;
+
+
+// _kbhit 키를 눌렀을 때 0이 아닌 값을 반환       _getch 키를 눌렀을 때 첫 번째 반환 값 224(ARROW) 두 번째 반환 값 해당 키
+// system("cls") 현재 출력된 모든 것 지우기
+int main(void) {
+	CursorView(0);
+	GotoXY(x, y);
+	printf("★");
+	while (1) {
+		if (_kbhit()) {
+			int nkey = _getch();
+			if (nkey == ARROW) {
+				nkey = _getch();
+				switch (nkey) {
+				case UP:
+					system("cls");
+					GotoXY(x, --y);
+					printf("★");
+					break;
+				case LEFT:
+					system("cls");
+					GotoXY(x = x - 2, y);
+					printf("★");
+					break;
+				case RIGHT:
+					system("cls");
+					GotoXY(x = x + 2, y);
+					printf("★");
+					break;
+				case DOWN:
+					system("cls");
+					GotoXY(x, ++y);
+					printf("★");
+					break;
+				}
+			}
+		}
+	}
+		return 0;
+	
+}
