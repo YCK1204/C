@@ -1,4 +1,8 @@
-int blocks[BLOCK_KIND][BLOCK_SIZE][BLOCK_SIZE][BLOCK_SIZE] = {
+#define BLOCK_KIND 7
+#define BLOCK_ROTANTE 4
+#define BLOCK_SIZE 4
+
+int blocks[BLOCK_KIND][BLOCK_ROTANTE][BLOCK_SIZE][BLOCK_SIZE] = {
 
 		// 1x4, 4x1 블록
 		0, 0, 0, 0,
